@@ -1808,6 +1808,75 @@ ui <- page_navbar(
         grid-template-columns:1fr;
       }
     }
+/* ADL_ANALISI_LLEGENDA_V1 */
+
+/* ADL_HOME_MOBILE_FIX_V1 */
+/* Només Inici, només pantalles estretes */
+@media (max-width: 740px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #f7f3eb;
+  }
+
+  .home-hero > img {
+    order: 1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .home-hero > .home-hero-title {
+    position: static;
+    order: 2;
+    padding: 1rem 1.1rem .65rem;
+    margin: 0;
+    color: #29382e;
+    background: #f7f3eb;
+    text-shadow: none;
+    pointer-events: auto;
+  }
+
+  .home-hero > .home-hero-title h1 {
+    margin: 0;
+    color: #29382e;
+    font-size: clamp(1.35rem, 5vw, 1.85rem);
+    line-height: 1.22;
+    text-shadow: none;
+    overflow-wrap: break-word;
+  }
+
+  .home-hero > .home-hero-caption {
+    order: 3;
+    padding: .55rem 1.1rem .85rem;
+    background: #f7f3eb;
+    border-top: 0;
+  }
+}
+
+.adl-analysis { max-width:1240px;margin:0 auto 1rem; padding:0 .35rem; color:#29312c; }
+.adl-analysis-hero { position:relative; min-height:225px; margin:0 auto .65rem; overflow:hidden; border-radius:13px; border:1px solid #e0d8c9; background:#f3f0e9; }
+.adl-analysis-hero>img { position:absolute; width:100%;height:100%;object-fit:cover;object-position:center 45%; }
+.adl-analysis-hero:after { content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,248,242,.98) 0%,rgba(250,248,242,.88) 25%,rgba(250,248,242,.20) 69%,rgba(250,248,242,0) 100%),linear-gradient(0deg,rgba(247,245,238,.36),transparent 36%); }
+.adl-analysis-hero-copy { position:relative;z-index:1;padding:2.3rem 2rem 1.7rem;max-width:760px; }
+.adl-analysis-hero-copy h1 { font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.12;color:#29382e;margin:0 0 .55rem; }
+.adl-analysis-hero-copy p { font-family:Georgia,serif;font-size:clamp(.95rem,1.5vw,1.18rem);color:#4a514b;max-width:550px;line-height:1.32;margin:0; }
+.adl-analysis-card { background:rgba(255,253,249,.93);border:1px solid #ded5c5;border-radius:12px;box-shadow:0 3px 14px rgba(46,40,27,.065);padding:1.05rem 1.2rem;margin-bottom:.65rem; }
+.adl-analysis-grid {display:grid;grid-template-columns:minmax(150px,225px) minmax(0,1fr);gap:1.2rem;align-items:start;}
+.adl-analysis-thumb {margin:0;}
+.adl-analysis-thumb img {display:block;width:100%;height:auto;border-radius:9px;border:1px solid #e2d9c9;}
+.adl-analysis-thumb figcaption {font-size:.76rem;color:#6e6a62;margin:.3rem 0 0;line-height:1.25;}
+.adl-analysis-text h2,.adl-analysis-points h2 {font-family:Georgia,serif;font-size:1.6rem;font-weight:500;color:#29382e;margin:0 0 .6rem;border-bottom:1px solid #ded5c5;padding-bottom:.4rem;}
+.adl-analysis-text p,.adl-analysis-points p {font-size:.98rem;line-height:1.44;margin:0 0 .54rem;}
+.adl-analysis-points ul {padding-left:1.2rem;line-height:1.42;margin:0;}
+.adl-analysis-points li {margin:.25rem 0;}
+@media(max-width:740px){.adl-analysis-hero{min-height:205px}.adl-analysis-hero-copy{padding:2rem 1.25rem 1.25rem}.adl-analysis-grid{grid-template-columns:1fr}.adl-analysis-thumb{max-width:190px}.adl-analysis-card{padding:.9rem}.adl-analysis-hero:after{background:linear-gradient(90deg,rgba(250,248,242,.95),rgba(250,248,242,.54) 75%,rgba(250,248,242,.15))}}
+
 /* CONDICIONS D'ÚS — PORTADA CA/ES */
 
 .usage-conditions {
@@ -1843,6 +1912,7 @@ ui <- page_navbar(
         document.querySelectorAll('.navbar-nav .nav-link').forEach(function(el){
           var v=el.getAttribute('data-value');
           if(v==='Inici') el.textContent=m.home;
+          if(v==='Anàlisi de la llegenda') el.textContent=(m.lang==='es'?'Análisis de la leyenda':'Anàlisi de la llegenda');
           if(v==='Guia de lectura') el.textContent=m.guide;
           if(v==='Fitxes') el.textContent=m.records;
           if(v==='Cronologia') el.textContent=m.timeline;
@@ -1912,6 +1982,10 @@ ui <- page_navbar(
 
   nav_panel("Inici",
     uiOutput("home_i18n")
+  ),
+
+  nav_panel("Anàlisi de la llegenda",
+    uiOutput("analysis_i18n")
   ),
 
   nav_panel(
@@ -2026,11 +2100,63 @@ server <- function(input,output,session){
         tags$p(tr("intro3",z)),
         tags$p(tr("intro4",z))
       ),
-      
+
       usage_conditions_ui(z)
     ))
   })
   
+
+  # ADL_ANALISI_LLEGENDA_V1 — CA/ES; scientific content grounded in the manuscript.
+  output$analysis_i18n <- renderUI({
+    z <- lang_rv()
+    es <- identical(z,"es")
+    tags$div(class="adl-public-theme adl-analysis",tagList(
+      tags$section(class="adl-analysis-hero",
+        tags$img(src="assets/toloriu_fotografia_autor.jpg",alt=if(es) "Vista de Toloriu" else "Vista de Toloriu"),
+        tags$div(class="adl-analysis-hero-copy",
+          tags$h1(if(es) "Análisis de la leyenda" else "Anàlisi de la llegenda"),
+          tags$p(if(es) "Historia documentada, formación de un relato y memoria cultural" else "Història documentada, formació d’un relat i memòria cultural")
+        )
+      ),
+      tags$section(class="adl-analysis-card adl-analysis-grid",
+        tags$figure(class="adl-analysis-thumb",
+          tags$img(src="assets/poble_muntanya.png",alt=if(es) "Ilustración del paisaje pirenaico con una iglesia" else "Il·lustració del paisatge pirinenc amb una església")
+          ),
+        tags$div(class="adl-analysis-text",
+          tags$h2(if(es) "Interpretación documental" else "Interpretació documental"),
+          if(es) tagList(
+            tags$p("La investigación sobre la princesa azteca de Toloriu permite reconstruir documentalmente la formación de un relato que hoy forma parte del patrimonio cultural pirenaico."),
+            tags$p("La movilidad entre América y la península ibérica durante el siglo XVI está documentada, así como una vinculación histórica entre una hija de Moctezuma y el apellido Grado. Ninguna de estas evidencias permite, sin embargo, identificar a los protagonistas de la leyenda ni verificar su genealogía."),
+            tags$p("Las descripciones de Toloriu de Osona (1899) y Torras (1924), y los repertorios pirenaicos de Joan Amades, no registran la trama mexicana. Este silencio es significativo, aunque no demuestra por sí solo la inexistencia del relato."),
+            tags$p(tags$strong("La secuencia documental más consistente empieza en 1952: "),"la prensa recoge las pretensiones genealógicas de Guillermo Grau Rifé y, el 24 de mayo, Manuel Reyes vincula a Chipahuatzin con Juan de Grau, todavía sin situarlos en Toloriu."),
+            tags$p("En 1955, Amada López de Meneses atribuye a Grau Rifé la versión que sitúa a María de Moctezuma en Toloriu y advierte de que no aparece prueba de la existencia del supuesto conquistador Juan de Grau."),
+            tags$p(tags$strong("Las evidencias son más coherentes con una construcción contemporánea de la leyenda que con la transmisión continuada de una tradición del siglo XVI.")," Esta conclusión no reduce su valor como memoria cultural: distingue la historia documentada del proceso de formación y arraigo patrimonial del relato.")
+          ) else tagList(
+            tags$p("La recerca sobre la princesa asteca de Toloriu permet reconstruir documentalment la formació d’un relat que avui forma part del patrimoni cultural pirinenc."),
+            tags$p("La mobilitat entre Amèrica i la península Ibèrica durant el segle XVI està documentada, com també una vinculació històrica entre una filla de Moctezuma i el cognom Grado. Cap d’aquestes evidències, però, no permet identificar els protagonistes de la llegenda ni verificar-ne la genealogia."),
+            tags$p("Les descripcions de Toloriu d’Osona (1899) i Torras (1924), i els repertoris pirinencs de Joan Amades, no registren la trama mexicana. Aquest silenci és significatiu, encara que no demostra per si sol la inexistència del relat."),
+            tags$p(tags$strong("La seqüència documental més consistent comença el 1952: "),"la premsa recull les pretensions genealògiques de Guillermo Grau Rifé i, el 24 de maig, Manuel Reyes vincula Chipahuatzin amb Juan de Grau, encara sense situar-los a Toloriu."),
+            tags$p("El 1955, Amada López de Meneses atribueix a Grau Rifé la versió que situa Maria de Moctezuma a Toloriu i adverteix que no apareix cap prova de l’existència del suposat conquistador Juan de Grau."),
+            tags$p(tags$strong("Les evidències són més coherents amb una construcció contemporània de la llegenda que no pas amb la transmissió continuada d’una tradició del segle XVI.")," Aquesta conclusió no en redueix el valor com a memòria cultural: distingeix la història documentada del procés de formació i arrelament patrimonial del relat.")
+          )
+        )
+      ),
+      tags$section(class="adl-analysis-card adl-analysis-points",
+        tags$h2(if(es) "Claves de la investigación" else "Claus de la recerca"),
+        if(es) tags$ul(
+          tags$li(tags$b("Siglo XVI: "),"contexto histórico real, sin identificación genealógica probada."),
+          tags$li(tags$b("Antes de 1952: "),"ausencia de la trama mexicana en las fuentes territoriales y folclóricas examinadas."),
+          tags$li(tags$b("1952–1955: "),"documentación de la elaboración y atribución del relato."),
+          tags$li(tags$b("Posteriormente: "),"difusión literaria, patrimonial y cultural de la leyenda.")
+        ) else tags$ul(
+          tags$li(tags$b("Segle XVI: "),"context històric real, sense identificació genealògica acreditada."),
+          tags$li(tags$b("Abans de 1952: "),"absència de la trama mexicana en les fonts territorials i folklòriques examinades."),
+          tags$li(tags$b("1952–1955: "),"documentació de l’elaboració i atribució del relat."),
+          tags$li(tags$b("Posteriorment: "),"difusió literària, patrimonial i cultural de la llegenda.")
+        )
+      )
+    ))
+  })
 
   output$guide_i18n <- renderUI({
     guide_ui(lang_rv())

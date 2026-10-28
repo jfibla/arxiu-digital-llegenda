@@ -1,3 +1,4 @@
+# ADL_GUIDE_MINIATURES_V1_20261028
 # ============================================================
 # GUIA DE LECTURA — CA / ES
 # Contingut editorial públic
@@ -15,17 +16,121 @@ guide_link <- function(label,item_id){
   )
 }
 
+# ADL_GUIDE_LAYOUT_V3 — 2 COLUMNES, CA/ES
 guide_section <- function(...){
+
+  parts <- list(...)
+
+  if(length(parts) < 2L ||
+     !inherits(parts[[1L]], "shiny.tag") ||
+     !identical(parts[[1L]]$name, "figure")){
+    stop("GUIDE_LAYOUT_V3: estructura inesperada")
+  }
+
+  miniature <- parts[[1L]]
+  paragraphs <- parts[-1L]
+
   tags$div(
-    class="guide-section",
-    ...
+    class="adl-guide-layout",
+
+    tags$style(HTML("
+      .adl-guide-layout {
+        display: grid;
+        grid-template-columns: 235px minmax(0,1fr);
+        gap: 14px;
+        align-items: start;
+        padding: 14px;
+        margin: 0;
+        background: #f5efe4;
+        border: 1px solid #e0d5c2;
+        border-radius: 14px;
+        box-sizing: border-box;
+      }
+
+      .adl-guide-text {
+        min-width: 0;
+        padding: 17px 20px;
+        background: #fffdf9;
+        border: 1px solid #ded5c5;
+        border-radius: 11px;
+        box-shadow: 0 2px 8px rgba(46,40,27,.04);
+        line-height: 1.49;
+      }
+
+      .adl-guide-text p {
+        margin: 0 0 .70rem;
+        line-height: 1.49;
+      }
+
+      .adl-guide-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      .adl-guide-image {
+        order: -1;
+        min-width: 0;
+        padding: 12px;
+        background: #fffdf9;
+        border: 1px solid #ded5c5;
+        border-radius: 11px;
+        box-shadow: 0 2px 8px rgba(46,40,27,.04);
+      }
+
+      .adl-guide-image figure {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+
+      .adl-guide-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        display: block;
+        object-fit: contain !important;
+        border-radius: 8px;
+      }
+
+      .adl-guide-image figcaption {
+        margin-top: .45rem;
+        font-size: .8rem;
+      }
+
+      @media (max-width: 760px) {
+        .adl-guide-layout {
+          grid-template-columns: minmax(0,1fr);
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .adl-guide-text {
+          padding: 13px;
+        }
+
+        .adl-guide-image {
+          width: min(100%, 245px);
+          justify-self: center;
+        }
+      }
+    ")),
+
+    tags$div(
+      class="adl-guide-text",
+      do.call(tagList, paragraphs)
+    ),
+
+    tags$div(
+      class="adl-guide-image",
+      miniature
+    )
   )
 }
 
 guide_figure <- function(src,alt="",caption=NULL,mode="full"){
   if(identical(mode,"side")){
     tags$figure(
-      style="width:320px;max-width:42%;float:right;margin:0 0 1rem 1.25rem;",
+      style="width:205px;max-width:32%;float:right;margin:0 0 .55rem 1rem;",
       tags$img(
         src=src,
         alt=alt,
@@ -63,12 +168,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "La leyenda",
         guide_section(
-          guide_figure(
-            "assets/guia_placa_toloriu.jpg",
-            alt="Placa de Toloriu",
-            caption="Placa instalada en la iglesia de Toloriu (1963), uno de los hitos principales de la fijación pública de la leyenda.",
-            mode="side"
-          ),
+          guide_figure("assets/placa_toloriu.png", alt="Miniatura decorativa: La leyenda", mode="side"),
+          
           tags$p(
             "Una tradición contemporánea vincula Toloriu, al pie del Cadí, con una supuesta hija de Moctezuma II conocida habitualmente como ",
             tags$strong("Xipahuatzin"),
@@ -101,11 +202,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Contexto",
         guide_section(
-          guide_figure(
-            "assets/cadi_presentacio.jpg",
-            alt="Toloriu y el Cadí",
-            caption="Toloriu y el Cadí. Fotografía de portada del archivo digital."
-          ),
+          guide_figure("assets/indi.png", alt="Miniatura decorativa: Contexto", mode="side"),
+          
           tags$p(
             "El contexto histórico obliga a distinguir entre posibilidad general y trayectoria individual demostrada. La presencia y movilidad de personas indígenas entre América y la Península durante el siglo XVI está documentada y forma parte del marco atlántico de la época. ",
             guide_link("Las noticias sobre indígenas trasladados por Hernán Cortés a la Península","EV1528_CORTES_INDIGENES_PENINSULA"),
@@ -143,8 +241,9 @@ guide_ui <- function(lang="ca"){
       ),
 
       nav_panel(
-        "Reivindicación Grau-Moctezuma",
+        "Reivindicación",
         guide_section(
+          guide_figure("assets/escut.png", alt="Miniatura decorativa: Reivindicación Grau-Moctezuma", mode="side"),
           tags$p(
             "La leyenda de Xipahuatzin en Toloriu no puede entenderse aisladamente de una reivindicación más amplia articulada alrededor de Guillem o Guillermo Grau Rifé. Antes de que la historia quedase plenamente territorializada en Toloriu, aparece una pretensión nobiliaria, dinástica y genealógica que vinculaba el apellido Grau con la descendencia de Moctezuma."
           ),
@@ -186,6 +285,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Control documental / ausencia",
         guide_section(
+          guide_figure("assets/llibres.png", alt="Miniatura decorativa: Control documental / ausencia", mode="side"),
           tags$p(
             "Las ausencias documentales deben utilizarse con prudencia. El silencio de una fuente concreta no demuestra que una tradición no existiera, pero una serie de fuentes independientes, próximas al territorio y adecuadas para registrar lugares, acontecimientos o tradiciones permite establecer límites documentales razonables."
           ),
@@ -219,12 +319,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Difusión y fijación",
         guide_section(
-          guide_figure(
-            "assets/guia_esglesia_toloriu.jpg",
-            alt="Iglesia de Toloriu",
-            caption="Iglesia de Toloriu, lugar de emplazamiento de la placa conmemorativa vinculada a la leyenda.",
-            mode="side"
-          ),
+          guide_figure("assets/paisatge_muntanya.png", alt="Miniatura decorativa: Difusión y fijación", mode="side"),
+          
           tags$p(
             "Una vez formulados sus componentes principales durante el ciclo de 1952, la historia comienza a adquirir autonomía respecto de la reivindicación dinástica que la había impulsado. Toloriu se convierte progresivamente en el escenario central y el relato pasa de la polémica genealógica a la memoria local, la divulgación y la cultura popular."
           ),
@@ -287,6 +383,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Crítica / impugnación",
         guide_section(
+          guide_figure("assets/esglesia_toloriu.png", alt="Miniatura decorativa: Crítica / impugnación", mode="side"),
           tags$p(
             "La crítica de la genealogía no aparece al final del proceso, sino prácticamente al mismo tiempo que su formulación pública. La construcción y la impugnación del relato conviven desde 1952."
           ),
@@ -320,6 +417,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Contraste",
         guide_section(
+          guide_figure("assets/archival_books_capture_v3.png", alt="Miniatura decorativa: Contraste", mode="side"),
           tags$p(
             "El contraste documental consiste en comparar la cadena biográfica de la leyenda con trayectorias del siglo XVI que sí dejan rastros identificables. No pretende demostrar que todo desplazamiento indígena a la Península fuera imposible —sabemos que ocurrió—, sino preguntar qué documentación cabría esperar cuando una persona o un linaje dejan una huella histórica verificable."
           ),
@@ -368,12 +466,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "La llegenda",
         guide_section(
-          guide_figure(
-            "assets/guia_placa_toloriu.jpg",
-            alt="Placa de Toloriu",
-            caption="Placa instal·lada a l’església de Toloriu (1963), una de les fites principals de la fixació pública de la llegenda.",
-            mode="side"
-          ),
+          guide_figure("assets/placa_toloriu.png", alt="Miniatura decorativa: La llegenda", mode="side"),
+          
           tags$p(
             "Una tradició contemporània vincula Toloriu, al peu del Cadí, amb una suposada filla de Moctezuma II coneguda habitualment com ",
             tags$strong("Xipahuatzin"),
@@ -406,11 +500,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Context",
         guide_section(
-          guide_figure(
-            "assets/cadi_presentacio.jpg",
-            alt="Toloriu i el Cadí",
-            caption="Toloriu i el Cadí. Fotografia de portada de l’arxiu digital."
-          ),
+          guide_figure("assets/indi.png", alt="Miniatura decorativa: Context", mode="side"),
+          
           tags$p(
             "El context històric obliga a distingir entre possibilitat general i trajectòria individual demostrada. La presència i mobilitat de persones indígenes entre Amèrica i la Península durant el segle XVI està documentada i forma part del marc atlàntic de l’època. ",
             guide_link("Les notícies sobre indígenes traslladats per Hernán Cortés a la Península","EV1528_CORTES_INDIGENES_PENINSULA"),
@@ -448,8 +539,9 @@ guide_ui <- function(lang="ca"){
       ),
 
       nav_panel(
-        "Reivindicació Grau-Moctezuma",
+        "Reivindicació",
         guide_section(
+          guide_figure("assets/escut.png", alt="Miniatura decorativa: Reivindicació Grau-Moctezuma", mode="side"),
           tags$p(
             "La llegenda de Xipahuatzin a Toloriu no es pot entendre aïlladament d’una reivindicació més àmplia articulada al voltant de Guillem o Guillermo Grau Rifé. Abans que la història quedés plenament territorialitzada a Toloriu, apareix una pretensió nobiliària, dinàstica i genealògica que vinculava el cognom Grau amb la descendència de Moctezuma."
           ),
@@ -491,6 +583,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Control documental / absència",
         guide_section(
+          guide_figure("assets/llibres.png", alt="Miniatura decorativa: Control documental / absència", mode="side"),
           tags$p(
             "Les absències documentals s’han d’utilitzar amb prudència. El silenci d’una font concreta no demostra que una tradició no existís, però una sèrie de fonts independents, pròximes al territori i adequades per registrar llocs, esdeveniments o tradicions permet establir límits documentals raonables."
           ),
@@ -524,12 +617,8 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Difusió i fixació",
         guide_section(
-          guide_figure(
-            "assets/guia_esglesia_toloriu.jpg",
-            alt="Església de Toloriu",
-            caption="Església de Toloriu, lloc on es troba la placa commemorativa vinculada a la llegenda.",
-            mode="side"
-          ),
+          guide_figure("assets/paisatge_muntanya.png", alt="Miniatura decorativa: Difusió i fixació", mode="side"),
+          
           tags$p(
             "Un cop formulats els seus components principals durant el cicle de 1952, la història comença a adquirir autonomia respecte de la reivindicació dinàstica que l’havia impulsada. Toloriu es converteix progressivament en l’escenari central i el relat passa de la polèmica genealògica a la memòria local, la divulgació i la cultura popular."
           ),
@@ -592,6 +681,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Crítica / impugnació",
         guide_section(
+          guide_figure("assets/esglesia_toloriu.png", alt="Miniatura decorativa: Crítica / impugnació", mode="side"),
           tags$p(
             "La crítica de la genealogia no apareix al final del procés, sinó pràcticament al mateix temps que la seva formulació pública. La construcció i la impugnació del relat conviuen des de 1952."
           ),
@@ -625,6 +715,7 @@ guide_ui <- function(lang="ca"){
       nav_panel(
         "Contrast",
         guide_section(
+          guide_figure("assets/archival_books_capture_v3.png", alt="Miniatura decorativa: Contrast", mode="side"),
           tags$p(
             "El contrast documental consisteix a comparar la cadena biogràfica de la llegenda amb trajectòries del segle XVI que sí que deixen rastres identificables. No pretén demostrar que tot desplaçament indígena a la Península fos impossible —sabem que n’hi hagué—, sinó preguntar quina documentació és esperable quan una persona o un llinatge deixen una empremta històrica verificable."
           ),

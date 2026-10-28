@@ -25,6 +25,82 @@ adl_bib_ui <- function(){
   tags$div(class="container-fluid",style="max-width:1060px;padding:20px 24px;",
   # ADL_BIB_EDITORIAL_V2 — editorial library catalog, airy but compact
   tags$head(tags$style(HTML("
+    /* ADL_BIB_HERO_V1 — capçalera amb paisatge del Cadí */
+    .adl-bib-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      box-sizing: border-box;
+      border: 1px solid #ded5c5;
+      border-radius: 13px;
+      padding: 25px 30px 23px;
+      margin: 0 0 18px;
+      min-height: 260px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(249,246,239,.95) 0%,
+          rgba(249,246,239,.85) 45%,
+          rgba(249,246,239,.65) 100%
+        ),
+        url('assets/paisatge_muntanya.png')
+          center 48% / cover no-repeat;
+      box-shadow: 0 3px 12px rgba(46,40,27,.06);
+    }
+
+    .adl-bib-hero h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem,3.5vw,3rem);
+      color: #29382e;
+      margin: 0 0 10px;
+      line-height: 1.12;
+    }
+
+    .adl-bib-hero p {
+      color: #35443e;
+      line-height: 1.48;
+      max-width: 900px;
+      margin: 0 0 18px;
+    }
+
+    .adl-bib-hero .row {
+      align-items: end;
+    }
+
+    .adl-bib-hero .form-label,
+    .adl-bib-hero .form-check-label {
+      color: #29382e;
+      font-weight: 500;
+    }
+
+    .adl-bib-hero input[type='text'] {
+      background: rgba(255,253,249,.96);
+      border-color: #d8c8ad;
+      border-radius: 9px;
+      max-width: 510px;
+    }
+
+    .adl-bib-hero .form-check {
+      margin-bottom: .7rem;
+    }
+
+    @media(max-width:760px) {
+      .adl-bib-hero {
+        min-height: 0;
+        padding: 20px 17px;
+        background-position: center center;
+      }
+
+      .adl-bib-hero h2 {
+        font-size: 2rem;
+      }
+
+      .adl-bib-hero .form-check {
+        margin-top: 8px;
+        margin-bottom: 4px;
+      }
+    }
+
     .adl-bib-entry{display:flex;align-items:flex-start;gap:23px;padding:22px 0;border-bottom:1px solid #e8e7e3;background:#fff;max-width:100%;}
     .adl-bib-entry:first-of-type{padding-top:16px;}
     .adl-bib-thumb{flex:0 0 112px;width:112px;height:150px;overflow:hidden;border-radius:4px;border:1px solid #ddd9d1;background:#f7f4ec;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 7px rgba(40,31,18,.09);}
@@ -50,9 +126,28 @@ adl_bib_ui <- function(){
     @media(max-width:650px){.adl-bib-thumb{flex:0 0 85px;width:85px;height:113px}.adl-bib-title{font-size:17px}}
     @media(max-width:650px){.adl-bib-entry{gap:14px;padding:17px 0}.adl-bib-thumb{flex-basis:82px;width:82px;height:111px}.adl-bib-cover{padding:9px 6px 7px 9px}.adl-bib-cover-label{font-size:7px;margin-bottom:6px}.adl-bib-cover-title{font-size:10px}.adl-bib-cover-year{font-size:9px}.adl-bib-title{font-size:17px}.adl-bib-reference{font-size:13px}.adl-bib-eyebrow{font-size:9px}}
   "))),
-    uiOutput("adl_bib_heading"),
-    fluidRow(column(8,textInput("adl_bib_q","Cerca / Buscar",placeholder="Autor, títol, any...")),
-      column(4,checkboxInput("adl_bib_links","Només amb enllaç / Solo con enlace",FALSE))),
+    tags$div(
+      class="adl-bib-hero",
+      uiOutput("adl_bib_heading"),
+      fluidRow(
+        column(
+          8,
+          textInput(
+            "adl_bib_q",
+            "Cerca / Buscar",
+            placeholder="Autor, títol, any..."
+          )
+        ),
+        column(
+          4,
+          checkboxInput(
+            "adl_bib_links",
+            "Només amb enllaç / Solo con enlace",
+            FALSE
+          )
+        )
+      )
+    ),
     uiOutput("adl_bib_sections"))
 }
 adl_bib_server <- function(input,output,session,language){
