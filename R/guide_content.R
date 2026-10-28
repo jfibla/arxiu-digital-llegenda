@@ -190,7 +190,7 @@ guide_ui <- function(lang="ca"){
             ", que presenta a María Xipaguazín Moctezuma como una figura histórica vinculada al pueblo."
           ),
           tags$p(
-            "A partir de entonces, libros, artículos, testimonios, literatura e iniciativas culturales amplían y transforman la narración. La leyenda acaba funcionando como una historia coherente porque elementos de orígenes distintos —Moctezuma, una princesa mexicana, un Grau, Toloriu, una descendencia y una tumba— quedan unidos retrospectivamente en un mismo relato."
+            "A partir de entonces, libros, artículos, testimonios y actividades culturales amplían el relato. Los motivos de la princesa, el caballero, la descendencia, el sepulcro y el tesoro se integran retrospectivamente en una historia aparentemente continua. La difusión de esa historia permite estudiar su arraigo cultural, pero no convierte sus episodios del siglo XVI en hechos documentados."
           ),
           tags$p(
             tags$strong("La pregunta documental que guía este archivo es, por tanto: "),
@@ -228,7 +228,7 @@ guide_ui <- function(lang="ca"){
           tags$p(
             "El contexto contemporáneo es igualmente importante. ",
             guide_link("La documentación de 1939 sobre Guillem Grau Rifé","EV1939_GRAU_MATRIMONI"),
-            " permite situar al personaje antes de la cristalización pública de 1952. Posteriormente, ",
+            " identifica a Guillermo de Grau Rifé como natural de Barcelona, hijo de Guillermo de Grau Iscla y Mercedes Rifé Brosa. Esta filiación documentada no acredita una ascendencia de Moctezuma ni una relación genealógica con Toloriu. Posteriormente, ",
             guide_link("la actividad del círculo de Charles Grando entre 1956 y 1961","EV1956_1961_GRANDO"),
             " y ",
             guide_link("la documentación publicada en el BOE en 1960","EV1960_BOE"),
@@ -245,12 +245,12 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/escut.png", alt="Miniatura decorativa: Reivindicación Grau-Moctezuma", mode="side"),
           tags$p(
-            "La leyenda de Xipahuatzin en Toloriu no puede entenderse aisladamente de una reivindicación más amplia articulada alrededor de Guillem o Guillermo Grau Rifé. Antes de que la historia quedase plenamente territorializada en Toloriu, aparece una pretensión nobiliaria, dinástica y genealógica que vinculaba el apellido Grau con la descendencia de Moctezuma."
+            "La leyenda de Xipahuatzin en Toloriu no puede entenderse aisladamente de una reivindicación más amplia articulada alrededor de Guillem o Guillermo Grau Rifé. La documentación contemporánea permite observar, antes de la fijación territorial de la historia, una pretensión nobiliaria y sucesoria que vinculaba el apellido Grau con Moctezuma. La existencia y la circulación de esa pretensión no son pruebas de la genealogía alegada."
           ),
           tags$p(
             guide_link("La documentación matrimonial de 1939","EV1939_GRAU_MATRIMONI"),
             " constituye un antecedente biográfico importante. En febrero de 1952, ",
-            guide_link("«Yo, el príncipe, en el calabozo»","EV1952_02_20_SOLIDARIDAD"),
+            guide_link("«Yo, el príncipe, en el calabozo» (26-02-1952)","EV1952_02_20_SOLIDARIDAD"),
             " muestra que la pretensión relacionada con la llamada «Corona de Méjico» ya había adquirido presencia pública. Poco después, ",
             guide_link("la prensa recoge también el carácter polémico de esta reivindicación","EV1952_02_24_DIARIO_BURGOS"),
             "."
@@ -287,7 +287,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/llibres.png", alt="Miniatura decorativa: Control documental / ausencia", mode="side"),
           tags$p(
-            "Las ausencias documentales deben utilizarse con prudencia. El silencio de una fuente concreta no demuestra que una tradición no existiera, pero una serie de fuentes independientes, próximas al territorio y adecuadas para registrar lugares, acontecimientos o tradiciones permite establecer límites documentales razonables."
+            "El silencio documental exige valorar qué investigaba cada fuente, qué territorio describía y qué elementos acostumbraba a registrar. La ausencia de una noticia en una obra aislada no demuestra que la tradición no existiera; la coincidencia de varios testimonios pertinentes permite, en cambio, delimitar qué relato no hemos podido documentar antes de mediados del siglo XX."
           ),
           tags$p(
             guide_link("Artur Osona describe Toloriu en 1899","EV1899_OSONA"),
@@ -305,9 +305,9 @@ guide_ui <- function(lang="ca"){
             " no proporcionan, en las búsquedas realizadas, una formulación individualizada de la historia Xipahuatzin–Grau–Toloriu anterior a la irrupción pública de los años cincuenta."
           ),
           tags$p(
-            "El control documental no se limita a fuentes antiguas. ",
-            guide_link("La revisión completa del número 6 de Nuestro Tiempo de 1952","EV1952_07_NUESTRO_TIEMPO_CONTROL"),
-            " permite descartar una atribución retrospectiva concreta: el número examinado no contiene el relato que posteriormente se le había asociado."
+            "Como control posterior a la difusión pública de la leyenda, la obra de Xavier Fàbregas ",
+            tags$em("Tradicions, mites i creences dels catalans"),
+            " (1979) ofrece un punto de comparación complementario. Aunque presta atención a las tradiciones y leyendas catalanas, no recoge la historia de Xipahuatzin y Toloriu. Esta ausencia, posterior a las publicaciones de 1952 y a la placa de 1963, no permite determinar hasta qué punto el relato era conocido fuera del ámbito local."
           ),
           tags$p(
             tags$strong("La conclusión debe formularse con precisión: "),
@@ -322,7 +322,7 @@ guide_ui <- function(lang="ca"){
           guide_figure("assets/paisatge_muntanya.png", alt="Miniatura decorativa: Difusión y fijación", mode="side"),
           
           tags$p(
-            "Una vez formulados sus componentes principales durante el ciclo de 1952, la historia comienza a adquirir autonomía respecto de la reivindicación dinástica que la había impulsado. Toloriu se convierte progresivamente en el escenario central y el relato pasa de la polémica genealógica a la memoria local, la divulgación y la cultura popular."
+            "A partir de las publicaciones de 1952, la narración se extiende más allá del contexto de la reclamación Grau-Moctezuma. Toloriu adquiere una posición central y el relato circula mediante placas, publicaciones, celebraciones, literatura y medios audiovisuales. Esta circulación debe estudiarse como historia de la recepción, no como corroboración retrospectiva de los hechos narrados."
           ),
           tags$p(
             "Un hito especialmente visible es ",
@@ -346,7 +346,7 @@ guide_ui <- function(lang="ca"){
           ),
           tags$p(
             "Entre estas reelaboraciones se encuentran ",
-            guide_link("La serp de plomes, de Núria Pradas","EV2003_PRADAS"),
+            guide_link("La serpent de plomes, de Núria Pradas (2002)","EV2003_PRADAS"),
             ", ",
             guide_link("el pregón local de 2003","EV2003_MAS_MIRO"),
             ", ",
@@ -372,6 +372,7 @@ guide_ui <- function(lang="ca"){
             guide_link("nuevas recreaciones literarias","EV2023_CONTRERAS"),
             " muestran la continuidad de una narración que ya funciona simultáneamente como leyenda local, recurso cultural y relato identitario."
           ),
+          tags$p("La reiteración del relato a lo largo del tiempo, tanto en publicaciones que lo presentan como un hecho histórico como en otras que cuestionan su veracidad, puede haber contribuido a consolidar su presencia en la memoria colectiva. Esta persistencia cultural no constituye, sin embargo, una prueba de la autenticidad histórica de los episodios narrados."),
           tags$p(
             "La secuencia permite observar un proceso de transformación: ",
             tags$strong("reivindicación genealógica → territorialización → memoria local → difusión mediática → patrimonialización y recreación cultural"),
@@ -385,7 +386,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/esglesia_toloriu.png", alt="Miniatura decorativa: Crítica / impugnación", mode="side"),
           tags$p(
-            "La crítica de la genealogía no aparece al final del proceso, sino prácticamente al mismo tiempo que su formulación pública. La construcción y la impugnación del relato conviven desde 1952."
+            "La crítica no es una reacción tardía: ya en 1952 convive con las primeras formulaciones públicas de la genealogía. Conviene distinguir la impugnación periodística de aquel año de las comprobaciones documentales posteriores, especialmente las de Amada López de Meneses en 1955 y 1960. Las fuentes críticas también participan en la circulación del relato, sin que ello invalide sus objeciones ni demuestre los episodios legendarios."
           ),
           tags$p(
             guide_link("El 5 de abril de 1952 Enrique Rubio publica «El falso príncipe de Moctezuma, confiesa»","EV1952_04_05_RUBIO_CONFESSA"),
@@ -419,7 +420,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/archival_books_capture_v3.png", alt="Miniatura decorativa: Contraste", mode="side"),
           tags$p(
-            "El contraste documental consiste en comparar la cadena biográfica de la leyenda con trayectorias del siglo XVI que sí dejan rastros identificables. No pretende demostrar que todo desplazamiento indígena a la Península fuera imposible —sabemos que ocurrió—, sino preguntar qué documentación cabría esperar cuando una persona o un linaje dejan una huella histórica verificable."
+            "El contraste documental diferencia tres situaciones: hechos históricos acreditados, afirmaciones de la leyenda que carecen de respaldo independiente y afirmaciones que entran en conflicto con fuentes concretas. Sabemos que hubo desplazamientos indígenas a la Península durante el siglo XVI; ese contexto no identifica a Xipahuatzin ni documenta su matrimonio, descendencia o residencia en Toloriu."
           ),
           tags$p(
             guide_link("Isabel Tecuichpotzin Moctezuma y Alonso de Grado","EV1526_ISABEL_MOCTEZUMA_ALONSO_GRADO"),
@@ -488,7 +489,7 @@ guide_ui <- function(lang="ca"){
             ", que presenta María Xipaguazín Moctezuma com una figura històrica vinculada al poble."
           ),
           tags$p(
-            "A partir d’aquí, llibres, articles, testimonis, literatura i iniciatives culturals amplien i transformen la narració. La llegenda acaba funcionant com una història coherent perquè elements d’orígens diferents —Moctezuma, una princesa mexicana, un Grau, Toloriu, una descendència i una tomba— queden units retrospectivament en un mateix relat."
+            "A partir d’aleshores, llibres, articles, testimonis i activitats culturals amplien el relat. Els motius de la princesa, el cavaller, la descendència, la sepultura i el tresor s’integren retrospectivament en una història aparentment contínua. La difusió d’aquesta història permet estudiar-ne l’arrelament cultural, però no converteix els episodis atribuïts al segle XVI en fets documentats."
           ),
           tags$p(
             tags$strong("La pregunta documental que guia aquest arxiu és, per tant: "),
@@ -526,7 +527,7 @@ guide_ui <- function(lang="ca"){
           tags$p(
             "El context contemporani és igualment important. ",
             guide_link("La documentació de 1939 sobre Guillem Grau Rifé","EV1939_GRAU_MATRIMONI"),
-            " permet situar el personatge abans de la cristal·lització pública de 1952. Posteriorment, ",
+            " identifica Guillermo de Grau Rifé com a natural de Barcelona, fill de Guillermo de Grau Iscla i Mercedes Rifé Brosa. Aquesta filiació documentada no acredita cap ascendència de Moctezuma ni cap relació genealògica amb Toloriu. Posteriorment, ",
             guide_link("l’activitat del cercle de Charles Grando entre 1956 i 1961","EV1956_1961_GRANDO"),
             " i ",
             guide_link("la documentació publicada al BOE l’any 1960","EV1960_BOE"),
@@ -543,12 +544,12 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/escut.png", alt="Miniatura decorativa: Reivindicació Grau-Moctezuma", mode="side"),
           tags$p(
-            "La llegenda de Xipahuatzin a Toloriu no es pot entendre aïlladament d’una reivindicació més àmplia articulada al voltant de Guillem o Guillermo Grau Rifé. Abans que la història quedés plenament territorialitzada a Toloriu, apareix una pretensió nobiliària, dinàstica i genealògica que vinculava el cognom Grau amb la descendència de Moctezuma."
+            "La llegenda de Xipahuatzin a Toloriu no es pot entendre aïlladament d’una reivindicació més àmplia articulada al voltant de Guillem o Guillermo Grau Rifé. La documentació contemporània permet observar, abans de la fixació territorial de la història, una pretensió nobiliària i successòria que vinculava el cognom Grau amb Moctezuma. L’existència i la circulació d’aquesta pretensió no són proves de la genealogia al·legada."
           ),
           tags$p(
             guide_link("La documentació matrimonial de 1939","EV1939_GRAU_MATRIMONI"),
             " constitueix un antecedent biogràfic important. El febrer de 1952, ",
-            guide_link("«Yo, el príncipe, en el calabozo»","EV1952_02_20_SOLIDARIDAD"),
+            guide_link("«Yo, el príncipe, en el calabozo» (26-02-1952)","EV1952_02_20_SOLIDARIDAD"),
             " mostra que la pretensió relacionada amb l’anomenada «Corona de Méjico» ja havia adquirit presència pública. Poc després, ",
             guide_link("la premsa recull també el caràcter polèmic d’aquesta reivindicació","EV1952_02_24_DIARIO_BURGOS"),
             "."
@@ -585,7 +586,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/llibres.png", alt="Miniatura decorativa: Control documental / absència", mode="side"),
           tags$p(
-            "Les absències documentals s’han d’utilitzar amb prudència. El silenci d’una font concreta no demostra que una tradició no existís, però una sèrie de fonts independents, pròximes al territori i adequades per registrar llocs, esdeveniments o tradicions permet establir límits documentals raonables."
+            "El silenci documental exigeix valorar què investigava cada font, quin territori descrivia i quins elements acostumava a registrar. L’absència d’una notícia en una obra aïllada no demostra que la tradició no existís; la coincidència de diversos testimonis pertinents permet, en canvi, delimitar quin relat no hem pogut documentar abans de mitjan segle XX."
           ),
           tags$p(
             guide_link("Artur Osona descriu Toloriu l’any 1899","EV1899_OSONA"),
@@ -603,9 +604,9 @@ guide_ui <- function(lang="ca"){
             " no proporcionen, en les cerques realitzades, una formulació individualitzada de la història Xipahuatzin–Grau–Toloriu anterior a la irrupció pública dels anys cinquanta."
           ),
           tags$p(
-            "El control documental no es limita a fonts antigues. ",
-            guide_link("La revisió completa del número 6 de Nuestro Tiempo de 1952","EV1952_07_NUESTRO_TIEMPO_CONTROL"),
-            " permet descartar una atribució retrospectiva concreta: el número examinat no conté el relat que posteriorment se li havia associat."
+            "Com a control posterior a la difusió pública de la llegenda, l’obra de Xavier Fàbregas ",
+            tags$em("Tradicions, mites i creences dels catalans"),
+            " (1979) ofereix un punt de comparació complementari. Malgrat la seva atenció a les tradicions i llegendes catalanes, no recull la història de Xipahuatzin i Toloriu. Aquesta absència, posterior a les publicacions de 1952 i a la placa de 1963, no permet determinar fins a quin punt el relat era conegut fora de l’àmbit local."
           ),
           tags$p(
             tags$strong("La conclusió s’ha de formular amb precisió: "),
@@ -620,7 +621,7 @@ guide_ui <- function(lang="ca"){
           guide_figure("assets/paisatge_muntanya.png", alt="Miniatura decorativa: Difusió i fixació", mode="side"),
           
           tags$p(
-            "Un cop formulats els seus components principals durant el cicle de 1952, la història comença a adquirir autonomia respecte de la reivindicació dinàstica que l’havia impulsada. Toloriu es converteix progressivament en l’escenari central i el relat passa de la polèmica genealògica a la memòria local, la divulgació i la cultura popular."
+            "A partir de les publicacions de 1952, la narració s’estén més enllà del context de la reclamació Grau-Moctezuma. Toloriu adquireix una posició central i el relat circula mitjançant plaques, publicacions, celebracions, literatura i mitjans audiovisuals. Aquesta circulació s’ha d’estudiar com a història de la recepció, no com a corroboració retrospectiva dels fets narrats."
           ),
           tags$p(
             "Una fita especialment visible és ",
@@ -644,7 +645,7 @@ guide_ui <- function(lang="ca"){
           ),
           tags$p(
             "Entre aquestes reelaboracions hi ha ",
-            guide_link("La serp de plomes, de Núria Pradas","EV2003_PRADAS"),
+            guide_link("La serpent de plomes, de Núria Pradas (2002)","EV2003_PRADAS"),
             ", ",
             guide_link("el pregó local de 2003","EV2003_MAS_MIRO"),
             ", ",
@@ -670,6 +671,7 @@ guide_ui <- function(lang="ca"){
             guide_link("noves recreacions literàries","EV2023_CONTRERAS"),
             " mostren la continuïtat d’una narració que ja funciona simultàniament com a llegenda local, recurs cultural i relat identitari."
           ),
+          tags$p("La reiteració del relat al llarg del temps, tant en publicacions que el presenten com un fet històric com en altres que en qüestionen la veracitat, pot haver contribuït a consolidar-ne la presència en la memòria col·lectiva. Aquesta persistència cultural no constitueix, però, una prova de l’autenticitat històrica dels episodis narrats."),
           tags$p(
             "La seqüència permet observar un procés de transformació: ",
             tags$strong("reivindicació genealògica → territorialització → memòria local → difusió mediàtica → patrimonialització i recreació cultural"),
@@ -683,7 +685,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/esglesia_toloriu.png", alt="Miniatura decorativa: Crítica / impugnació", mode="side"),
           tags$p(
-            "La crítica de la genealogia no apareix al final del procés, sinó pràcticament al mateix temps que la seva formulació pública. La construcció i la impugnació del relat conviuen des de 1952."
+            "La crítica no és una reacció tardana: ja el 1952 conviu amb les primeres formulacions públiques de la genealogia. Cal distingir la impugnació periodística d’aquell any de les comprovacions documentals posteriors, especialment les d’Amada López de Meneses el 1955 i el 1960. Les fonts crítiques també participen en la circulació del relat, sense que això invalidi les seves objeccions ni demostri els episodis llegendaris."
           ),
           tags$p(
             guide_link("El 5 d’abril de 1952 Enrique Rubio publica «El falso príncipe de Moctezuma, confiesa»","EV1952_04_05_RUBIO_CONFESSA"),
@@ -717,7 +719,7 @@ guide_ui <- function(lang="ca"){
         guide_section(
           guide_figure("assets/archival_books_capture_v3.png", alt="Miniatura decorativa: Contrast", mode="side"),
           tags$p(
-            "El contrast documental consisteix a comparar la cadena biogràfica de la llegenda amb trajectòries del segle XVI que sí que deixen rastres identificables. No pretén demostrar que tot desplaçament indígena a la Península fos impossible —sabem que n’hi hagué—, sinó preguntar quina documentació és esperable quan una persona o un llinatge deixen una empremta històrica verificable."
+            "El contrast documental diferencia tres situacions: fets històrics acreditats, afirmacions de la llegenda mancades de suport independent i afirmacions que entren en conflicte amb fonts concretes. Sabem que hi hagué desplaçaments indígenes a la Península durant el segle XVI; aquest context no identifica Xipahuatzin ni documenta el seu matrimoni, descendència o residència a Toloriu."
           ),
           tags$p(
             guide_link("Isabel Tecuichpotzin Moctezuma i Alonso de Grado","EV1526_ISABEL_MOCTEZUMA_ALONSO_GRADO"),
