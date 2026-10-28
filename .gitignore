@@ -1,0 +1,23 @@
+# Credentials and local configuration
+.Renviron
+.Rprofile
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+rsconnect/
+.Rproj.user/
+.Rhistory
+.RData
+.DS_Store
+
+# Private research material
+private_sources/
+library/
+scripts/
+runs/
+backups/
+*.sqlite-wal
+*.sqlite-shm

@@ -1,0 +1,7 @@
+rights_status,label,default_display,default_download,rule
+PUBLIC_DOMAIN,Domini públic,full,yes,"Es pot mostrar complet, mantenint atribució i procedència."
+OPEN_LICENSE,Llicència oberta,segons llicència,segons llicència,Respectar exactament la llicència.
+PERMISSION_GRANTED,Permís exprés / material propi,full,segons permís,Guardar evidència del permís.
+CITATION_ONLY,Cita/anàlisi,thumbnail o excerpt,no,Mostrar només el necessari per identificar o sustentar l’anàlisi.
+PRIVATE_RESEARCH_COPY,Còpia privada de recerca,none,no,Només metadades; original fora de l’espai públic.
+RIGHTS_UNKNOWN,Drets no aclarits,none,no,No reproduir fins aclarir drets.

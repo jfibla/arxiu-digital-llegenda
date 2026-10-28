@@ -1,0 +1,120 @@
+{
+  "origin": "GITHUB_PUBLIC_V1",
+  "items": 61,
+  "assets_metadata": 69,
+  "reproductions_included": 0,
+  "files": {
+    ".gitignore": {
+      "bytes": 250,
+      "sha256": "c09603ee51480325d81e477df84d0e55014e6292aa83320f76f20bd6af0fee13"
+    },
+    "AUTORITZACIONS/MASTER/MASTER_AUTORITZACIONS.csv": {
+      "bytes": 29292,
+      "sha256": "a3faee5378dddf70dab0f28c986f1132b13c270043beb613cf9c156e69e6753d"
+    },
+    "AUTORITZACIONS/MASTER/TEXTOS_EDITORIALS_ES.csv": {
+      "bytes": 10555,
+      "sha256": "0249f84ca5d9e8f5c066ec751ca3330d03a77d986b88ca735860fb40b8ccdaa4"
+    },
+    "AUTORITZACIONS/MASTER/TEXTOS_EDITORIALS_VALIDATS.csv": {
+      "bytes": 10479,
+      "sha256": "b5c4f2a71aeeeb5b795f2dc52d20763ba22ca40c94b11b51e45390a29124542c"
+    },
+    "R/bibliography_v1.R": {
+      "bytes": 11833,
+      "sha256": "83527f3fe52ce690437555cdb7ec8cb0cc75e1a3e96e2e8160b8df92e26ec18e"
+    },
+    "R/external_bib_links.R": {
+      "bytes": 2648,
+      "sha256": "6a98dccc0b9394688c2bbf4da246adf18dd4bdfc75f19e019ee7f7dd3cd47e33"
+    },
+    "R/guide_content.R": {
+      "bytes": 41070,
+      "sha256": "b5efd7eb8e20f5189494afa34e04186d1b2db8ba98d7850963fd89a7d2e6b749"
+    },
+    "R/master_test_audit.R": {
+      "bytes": 3605,
+      "sha256": "ae6e2c20baa89992781818103d8c75f259dcc0b942f876e21ae04c7c3c529b3e"
+    },
+    "R/surname_labels.R": {
+      "bytes": 3810,
+      "sha256": "21b40956c679b27badbff552eeb0ddc04be4a223619763a4f219a53110d347d1"
+    },
+    "R/usage_conditions.R": {
+      "bytes": 3234,
+      "sha256": "2bcafba4692f87fa38966ec6ad53ebf6f039850952c7d51989e3f26188f4afd6"
+    },
+    "README.md": {
+      "bytes": 1550,
+      "sha256": "70239d27059fa0f583a5ee631739d143db84c94313975739e0de19d27ea5b971"
+    },
+    "app.R": {
+      "bytes": 212631,
+      "sha256": "3be0ffef2d0a88e7ad115c54fcdab4fc332787ed323a568909b69e0260b38b68"
+    },
+    "data/bibliography_internal_links.csv": {
+      "bytes": 2997,
+      "sha256": "c3b2961fb071437e25057ef6382443a1267bff62bea47272d4eaed260bed90b1"
+    },
+    "data/bibliography_v1.csv": {
+      "bytes": 23135,
+      "sha256": "cd6084e263cb73d3228b5280c8d9a2cc7cb1431bea1664631e7ae638ff057008"
+    },
+    "data/categories.csv": {
+      "bytes": 764,
+      "sha256": "9fd63c2142cd82f7b766651f25850cd53db1b5f4e66f0774f6f7927e5d75b4f3"
+    },
+    "data/derivatives_manifest.csv": {
+      "bytes": 116,
+      "sha256": "5d68fb57c86c214eaa09585eab167fdbb593f842a84a572572e01c4aceccd8ae"
+    },
+    "data/rights_policy.csv": {
+      "bytes": 678,
+      "sha256": "7fa70d46ea6f8a78c369e9c54512bc7bfba948ff5c3f275d54debe7949317814"
+    },
+    "data/xipahuatzin_wiki.sqlite": {
+      "bytes": 806912,
+      "sha256": "e1cae79f4020a30d56fb2893bf44fd3370fe1fe4876a296fbcd000eefba461a1"
+    },
+    "www/adl_timeline_visual.html": {
+      "bytes": 552360,
+      "sha256": "6b36b3566757dc9a8343b393761d8fbe7dab0cda16781896759b161cd6eeba94"
+    },
+    "www/assets/archival_theme_v1.css": {
+      "bytes": 12461,
+      "sha256": "6aad4065947e25e6ef86523b01d163acb97a51b85fe20a18125dc23f668f3d88"
+    },
+    "www/assets/cadi_presentacio.jpg": {
+      "bytes": 1030562,
+      "sha256": "1415dbc7cc0a6ea8893e7b598f826ffb6912d6530d5578cc6288236f85818c30"
+    },
+    "www/assets/guia_esglesia_toloriu.jpg": {
+      "bytes": 1136761,
+      "sha256": "111c9bf83acf6edb4e06cd51caf30100c8eeac061d577c5a32c8214624ac7e3b"
+    },
+    "www/assets/guia_placa_toloriu.jpg": {
+      "bytes": 956376,
+      "sha256": "78937c1041c876a1acb5f16ddd33e1475489a1a95f7942290d658ea6d05102b4"
+    },
+    "www/assets/archival_mountains_capture_v3.png": {
+      "bytes": 359692,
+      "sha256": "8ad73dc69663044f0d64924e55b362f08d0181ca7f948f8ae810eb9a70381ab9"
+    },
+    "www/assets/archival_books_capture_v3.png": {
+      "bytes": 439507,
+      "sha256": "a934842f971e51a1114853ea4f542cd8f06ccb0aff2b5c5bdc73e73237c46a1d"
+    },
+    "www/assets/archival_mountains_v1.svg": {
+      "bytes": 2942,
+      "sha256": "f9556f918b48167d2fb91b6e7823443cffc5eea48f917caa0ad562e5842b15ec"
+    },
+    "www/assets/archival_books_v1.svg": {
+      "bytes": 4672,
+      "sha256": "d7c983b2d07b1404d67b99c7d287dbdb0f7bf3ea6fc798291cd2250677b8b71d"
+    },
+    "www/assets/logo_iei.png": {
+      "bytes": 3891,
+      "sha256": "8b2a2c555cf60e862cf62e6e5dd817c584e9a5e21c717a51a4378376a304e231"
+    }
+  }
+}

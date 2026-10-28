@@ -1,0 +1,6 @@
+category,category_label,category_color,category_text_color,definition
+control,Control documental / absència,#D8E1E8,#213547,"Controls negatius, silencis documentals i fonts anteriors que no registren la trama mexicana."
+difusio,Difusió i fixació,#E9D3A2,#4C3610,"Fonts que introdueixen, repeteixen, amplien o contribueixen a fixar la llegenda."
+critica,Crítica / impugnació,#D9B5B2,#4B1F1C,"Fonts que qüestionen, contradien o impugnen documentalment elements del relat."
+context,Context,#E3E3E3,#2F2F2F,Fonts contextuals o auxiliars que ajuden a interpretar el marc històric o documental.
+contrast,Contrast,#C9D8C3,#244126,Fonts o lectures que confronten retrospectivament el relat amb l’evidència disponible sense ser controls negatius estrictes.
