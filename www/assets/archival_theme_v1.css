@@ -620,3 +620,76 @@
     padding: .5rem .85rem !important;
   }
 }
+
+/* ADL_PUBLIC_CITATIONS_V2: same editorial card and responsive layout as home cards. */
+.adl-public-theme .adl-public-citations::before {
+  background-image:url("llibres_ordinador.png");
+  background-size:contain;
+}
+.adl-public-theme .adl-public-citations h3 {
+  font:700 1.85rem Georgia,serif;
+  color:#244048;
+}
+.adl-public-theme .adl-public-citations a {
+  color:#276e68;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:2px;
+  overflow-wrap:anywhere;
+}
+.adl-public-theme .adl-public-citations a:hover,
+.adl-public-theme .adl-public-citations a:focus-visible {color:#174942;}
+
+/* ADL_PUBLIC_CITATIONS_V4: integració amb el tema existent */
+.adl-public-theme:has(.adl-public-citations) {
+  height:auto !important;
+  min-height:75vh;
+  display:flow-root;
+  overflow:visible;
+  padding-bottom:2.5rem;
+}
+.adl-public-theme .adl-public-citations {
+  box-sizing:border-box;
+}
+
+/* ADL_CITATIONS_LAYOUT_V5 — integracio amb el fons original */
+.adl-public-theme.adl-home-with-citations {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  display: flow-root !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Miniatura propia de publicacions, sense afectar les altres */
+.adl-public-theme .usage-conditions.adl-public-citations::before {
+  background-image: url("llibres_ordinador.png") !important;
+  background-size: 90% auto !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* ADL_HOME_BACKGROUND_V6
+   Un únic fons per a tota la pàgina d'Inici.
+   Les targetes conserven els estils originals.
+*/
+#home_i18n {
+  display: flow-root;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  background:
+    radial-gradient(circle at 6% 12%, #e9dcc955, transparent 34%),
+    radial-gradient(circle at 95% 87%, #cbd6c555, transparent 30%),
+    var(--adl-paper);
+  border-radius: 12px;
+  padding-bottom: 1.5rem;
+}
+
+#home_i18n > .adl-public-theme {
+  background: transparent !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}

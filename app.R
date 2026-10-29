@@ -2070,7 +2070,7 @@ server <- function(input,output,session){
   output$home_i18n <- renderUI({
     z <- lang_rv()
     
-    tags$div(class="adl-public-theme",tagList(
+    tags$div(class="adl-public-theme adl-home-with-citations",style="height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;",tagList(
       tags$div(
         class="home-hero",
         tags$div(
@@ -2101,7 +2101,33 @@ server <- function(input,output,session){
         tags$p(tr("intro4",z))
       ),
 
-      usage_conditions_ui(z)
+      usage_conditions_ui(z),
+      # ADL_PUBLIC_CITATIONS_V1 — referències públiques CA/ES
+      tags$section(
+        class="usage-conditions adl-public-citations",
+        tags$h3(if (identical(z,"es")) "Publicaciones y código del proyecto" else "Publicacions i codi del projecte"),
+        tags$p(
+          tags$strong(if (identical(z,"es")) "Artículo de investigación (preprint): " else "Article de recerca (preprint): "),
+          "Fibla, J. (2026). La princesa asteca del Pirineu: història documentada, memòria i formació d’una llegenda. ",
+          tags$a("DOI: 10.17613/h1re2-42981", href="https://doi.org/10.17613/h1re2-42981", target="_blank", rel="noopener noreferrer")
+        ),
+        tags$p(
+          tags$strong(if (identical(z,"es")) "Archivo digital (v1.0): " else "Arxiu digital (v1.0): "),
+          "Fibla, J. (2026). Arxiu digital d'una llegenda: Xipahuatzin i Toloriu (v1.0). Knowledge Commons. ",
+          tags$a("DOI: 10.17613/0zg10-75t71", href="https://doi.org/10.17613/0zg10-75t71", target="_blank", rel="noopener noreferrer")
+        ),
+        tags$p(
+          tags$strong(if (identical(z,"es")) "Código fuente: " else "Codi font: "),
+          tags$a("GitHub · jfibla/arxiu-digital-llegenda", href="https://github.com/jfibla/arxiu-digital-llegenda", target="_blank", rel="noopener noreferrer")
+        ),
+        tags$p(
+          style="font-size:.92em;color:#505b65;",
+          if (identical(z,"es"))
+            "El artículo está escrito en catalán; el archivo digital se ofrece en catalán y castellano."
+          else
+            "L’article està escrit en català; l’arxiu digital s’ofereix en català i castellà."
+        )
+      )
     ))
   })
   
